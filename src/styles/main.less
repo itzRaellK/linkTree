@@ -1,0 +1,125 @@
+@import "mapas.less";
+
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+.marginBottom8 {
+    margin-bottom: 8px;
+}
+
+.fontSize14 {
+    font-size: 14px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #colors[backgroundColor];
+    color: #colors[textColor];
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    @media @breakpointTablet {
+        max-width: 90%;
+    }
+
+    @media @breakpointMobile {
+        max-width: 70%;
+    }
+}
+
+header {
+    padding: 80px 0 20px;
+
+    .profile-avatar {
+        max-width: 96px;
+        display: block;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+    }
+}
+
+.profile-bio {
+    text-align: center;
+
+    &-name {
+        font-size: 16px;
+        .marginBottom8();
+    }
+
+    &-sub {
+        .fontSize14();
+        .marginBottom8();
+    }
+
+    &-desc {
+        .fontSize14();
+        opacity: 70%;
+        max-width: 660px;
+        margin: 0 auto;
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 360px;
+    margin: 0 auto;
+
+    li {
+
+        img {
+            max-width: 30px;
+            
+            &:hover {
+                transition: all ease .3s;
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.projects-list {
+    margin-top: 32px;
+    padding-bottom: 75px;
+    &-item {
+        a {
+            text-decoration: none;
+            background-color: #colors[buttonColor];
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #colors[textColor];
+            font-weight: bold;
+            border-radius: 30px;
+            border: 2px solid #colors[buttonColor];
+
+            &:hover {
+                color: #colors[buttonColor];
+                background-color: transparent;
+                transition: all ease .3s;
+                transform: scale(1.02);
+                cursor: pointer;
+            }
+        }
+    }
+}
